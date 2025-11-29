@@ -1,0 +1,77 @@
+
+### BASE URL
+@baseUrl = http://localhost:3000/api
+
+########################################
+#           AUTORES ROUTES
+########################################
+
+### Obtener todos los autores
+GET {{baseUrl}}/autores
+
+### Obtener autor por ID
+GET {{baseUrl}}/autores/1
+
+### Crear un nuevo autor
+POST {{baseUrl}}/autores
+Content-Type: application/json
+
+{
+  "nombre": "Juan Pérez",
+  "email": "juan.perez@example.com",
+  "imagen": "https://example.com/img/juan.jpg"
+}
+
+### Actualizar autor por ID
+PUT {{baseUrl}}/autores/1
+Content-Type: application/json
+
+{
+  "nombre": "Juan Actualizado",
+  "email": "juan.actualizado@example.com",
+  "imagen": "https://example.com/img/juan-new.jpg"
+}
+
+### Eliminar autor por ID
+DELETE {{baseUrl}}/autores/1
+
+
+########################################
+#           POSTS ROUTES
+########################################
+
+### Obtener todos los posts
+GET {{baseUrl}}/posts
+
+### Obtener post por ID
+GET {{baseUrl}}/posts/1
+
+### Obtener posts por autor ID
+GET {{baseUrl}}/posts/autor/1
+
+### Crear un nuevo post
+POST {{baseUrl}}/posts
+Content-Type: application/json
+
+{
+  "titulo": "Mi primer post",
+  "descripcion": "Este es el contenido del post",
+  "fecha_creacion": "2025-11-29 14:00:00",
+  "categoria": "Tecnología",
+  "autor_id": 1
+}
+
+### Actualizar post por ID
+PUT {{baseUrl}}/posts/1
+Content-Type: application/json
+
+{
+  "titulo": "Post actualizado",
+  "descripcion": "Contenido actualizado del post",
+  "fecha_creacion": "2025-11-29 15:00:00",
+  "categoria": "Programación",
+  "autor_id": 1
+}
+
+### Eliminar post por ID
+DELETE {{baseUrl}}/posts/1
